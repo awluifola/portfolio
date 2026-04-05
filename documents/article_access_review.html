@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>What Makes an Access Review Defensible in Audit</title>
+      <style>
+    :root{
+      --bg:#f8fafc;
+      --paper:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0f766e;
+      --accent-soft:#ecfeff;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%);
+      color:var(--text);
+      line-height:1.75;
+    }
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:40px 20px 72px;}
+    .hero,.toc,.section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:32px 30px;
+      box-shadow:0 12px 28px rgba(15,23,42,.05);
+      margin-top:11px;
+    }
+    .hero{margin-top:0; border-radius:28px; padding:36px 34px 30px;}
+    .kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    h1{margin:18px 0 0; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.02em;}
+    h2{margin:0 0 8px; font-size:1.4rem; line-height:1.2;}
+    .sub{margin-top:16px; font-size:1.08rem; color:var(--muted); max-width:760px;}
+    .meta{display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:18px; color:var(--muted); font-size:14px;}
+    .author{margin-top:14px; font-size:15px; color:#334155;}
+    .author strong{color:#0f172a;}
+    .hero-image{
+      width:100%;
+      margin-top:24px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      display:block;
+      box-shadow:0 8px 24px rgba(15,23,42,.08);
+      object-fit:cover;
+    }
+    .toc ul{margin:0; padding-left:20px;}
+    .toc li{margin:8px 0;}
+    .section p{margin:0 0 10px;}
+    .pullquote{
+      margin:16px 0 18px;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid var(--accent);
+      background:#f8fafc;
+      border-radius:0 14px 14px 0;
+      color:#134e4a;
+      font-weight:600;
+    }
+    .callout{
+      margin-top:14px;
+      padding:18px 20px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+    }
+    .callout strong{display:block; margin-bottom:8px;}
+    .footer-note{margin-top:20px; color:var(--muted); font-size:14px;}
+    @media (max-width:640px){
+      .hero,.toc,.section{padding:22px 20px;}
+      .wrap{padding:20px 12px 48px;}
+    }
+</style>
+    </head>
+    <body>
+      <div class="wrap">
+        <section class="hero">
+          <div class="kicker">Article</div>
+          <h1>What Makes an Access Review Defensible in Audit</h1>
+          <p class="sub">Access reviews often look straightforward until you try to rely on them. This article explains what separates a review that is merely completed from one that can actually stand up to audit scrutiny.</p>
+          <div class="author">By <strong>Fola A.</strong></div>
+          <div class="meta">
+            <div>Topic: Access Reviews</div>
+            <div>Audience: IT Audit / Technology Risk / Controls</div>
+            <div>Category: Control Effectiveness</div>
+          </div>
+          <img class="hero-image" src="Assets/access-review-banner.png" alt="Access Reviews article banner image" />
+        </section>
+
+        <section class="toc">
+          <h2>In this article</h2>
+          <ul>
+            <li>Why completion is not the same as quality</li>
+<li>What auditors look for when they review access evidence</li>
+<li>Where access reviews usually fall apart</li>
+<li>What a defensible review looks like in practice</li>
+<li>Why elevated access deserves special attention</li>
+<li>How to make the process more reliable</li>
+          </ul>
+        </section>
+
+        <section class="section">
+      <h2>A completed access review is not always a strong one</h2>
+      <p>Access reviews are one of those controls that can look healthy from a distance. The form is signed. The spreadsheet exists. The review was done on time. At first glance, everything seems in order.</p><p>But once you look closer, the real question becomes harder: was the review meaningful? That is the point where many access reviews begin to weaken. A control can be performed on schedule and still fail to provide real assurance.</p><p>A defensible access review is not just proof that someone looked at a list. It is proof that the right population was reviewed, the reviewer understood what they were looking at, and the process was strong enough to catch inappropriate or excessive access when it mattered.</p>
+
+      <div class="pullquote">In audit, the value of an access review is not in the signature alone. It is in the quality of the judgment behind it.</div>
+    </section><section class="section">
+      <h2>What auditors usually look for</h2>
+      <p>When auditors assess access reviews, they are not only checking whether the control happened. They are trying to determine whether the review provides meaningful coverage over the risk.</p><p>That usually starts with the population. Was the report complete? Did it include all in-scope users? Were privileged accounts, terminated users, contractors, and high-risk roles included? If the underlying listing is incomplete, the review can look orderly while still missing the most important exposures.</p><p>The next question is whether the reviewer had enough context. A long user listing without role descriptions, business ownership, or risk indicators forces the reviewer to guess. That makes the control less reliable, even if the reviewer is acting in good faith.</p>
+      <div class="callout"><strong>A defensible review usually answers these questions clearly:</strong>Was the user population complete?<br>
+        Were elevated or sensitive roles included?<br>
+        Did the reviewer understand what they were certifying?<br>
+        Were issues identified and followed up?<br>
+        Can the organization show evidence that the review was actually performed with care?</div>
+
+    </section><section class="section">
+      <h2>Where access reviews usually break down</h2>
+      <p>One common weakness is overreliance on system-generated reports without validation. Teams may trust the export because it came from the system, but that does not automatically mean it reflects the full review population or the right access dimensions.</p><p>Another weak point is reviewer engagement. In some environments, managers sign off quickly because the process is treated as administrative overhead rather than a real control activity. That creates a review that is complete on paper but shallow in practice.</p><p>A third issue is poor follow-through. A reviewer may flag access that looks excessive, but if there is no documented action, no owner, and no evidence of resolution, the value of the review drops sharply. A control should not stop at identification if the risk is still sitting there afterward.</p>
+
+      <div class="pullquote">An access review becomes difficult to defend when it depends more on routine than on real evaluation.</div>
+    </section><section class="section">
+      <h2>What a stronger review looks like in practice</h2>
+      <p>A stronger access review begins with a cleaner population and a better presentation of information. Users should be grouped in a way that supports meaningful review, not just raw export convenience. High-risk access should be easier to spot, not buried.</p><p>The reviewer should be someone who understands the business use of the access, not just someone available to sign off. Context matters. Good reviewers know which roles make sense, which combinations raise concern, and which access levels no longer match a user’s responsibilities.</p><p>Strong reviews also create visible evidence of thought. That may include comments, notations, follow-up items, documented removals, or clear confirmation that unusual access was assessed rather than ignored.</p>
+
+
+    </section><section class="section">
+      <h2>Why elevated access deserves extra attention</h2>
+      <p>Not all access carries the same risk. Elevated, privileged, emergency, or administrative access deserves more scrutiny because a single issue there can carry far greater impact than several low-risk items combined.</p><p>That is why a mature review does not treat all access equally. It gives extra attention to accounts with broad capability, conflicting permissions, or access to sensitive data and production-level functions.</p><p>A review becomes much easier to defend when it shows that the organization knows where the real risk sits and spends more attention there.</p>
+
+
+    </section><section class="section">
+      <h2>The goal is to make the review useful, not just repeatable</h2>
+      <p>The most reliable access review processes are the ones that people can actually use. They are structured, understandable, and realistic for the reviewer. They make elevated access visible, they support accountability, and they leave behind evidence that shows not just completion but judgment.</p><p>That is ultimately what makes an access review defensible in audit. Not the existence of a signed file, but the ability to show that the review was complete, informed, risk-aware, and followed through to a meaningful result.</p>
+
+
+    </section>
+
+        <section class="section">
+      <h2>Closing thought</h2>
+      <p>A defensible access review is one that shows real judgment, not just timely completion. It gives the reviewer enough context to make decisions, gives the organization a way to demonstrate those decisions, and gives auditors confidence that the control is doing more than creating paperwork.</p>
+      <p>When access reviews are designed that way, they become far more useful. They help reduce unnecessary access, improve accountability, and strengthen the reliability of one of the most important controls in the environment.</p>
+      <p class="footer-note">Fola A.</p>
+    </section>
+      </div>
+    </body>
+    </html>

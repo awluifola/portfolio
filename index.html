@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fola A | IT Audit Portfolio</title>
+<style>
+  :root{
+    --bg:#0a1322;
+    --bg2:#101b2d;
+    --panel:rgba(255,255,255,0.05);
+    --panel2:rgba(9,17,31,0.88);
+    --text:#e7edf6;
+    --muted:#9eb0c8;
+    --border:rgba(255,255,255,0.10);
+    --accent:#7dd3fc;
+    --shadow:0 18px 44px rgba(0,0,0,.28);
+    --radius:20px;
+    --maxw:1180px;
+    --anchor-offset:70px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(14,165,233,.15), transparent 24%),
+      linear-gradient(to bottom, var(--bg), var(--bg2) 42%, var(--bg));
+    line-height:1.62;
+  }
+  section[id]{scroll-margin-top:var(--anchor-offset)}
+  a{text-decoration:none;color:inherit}
+  .container{width:min(var(--maxw),calc(100% - 34px));margin:0 auto}
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,19,34,.9);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:14px 0;
+  }
+  .brand{font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--accent)}
+  .nav{display:flex;gap:18px;flex-wrap:wrap}
+  .nav a{font-size:14px;color:#d6e3ef}
+  .nav a:hover{color:#fff}
+
+  .section{padding:18px 0 34px}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .card-strong{
+    background:var(--panel2);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .p-24{padding:24px}
+  .p-28{padding:28px}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#dff5ff;
+    background:rgba(56,189,248,.12);
+    border:1px solid rgba(56,189,248,.22);
+  }
+  h1,h2,h3,h4{margin:0;color:#fff;line-height:1.15}
+  h1{font-size:clamp(2.3rem,5vw,4.1rem)}
+  h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
+  h3{font-size:1.24rem}
+  p{margin:0}
+  .muted{color:var(--muted)}
+  .hero{
+    display:grid;
+    grid-template-columns:1.12fr .88fr;
+    gap:26px;
+    align-items:stretch;
+    padding:30px 0 40px;
+  }
+  .hero .lead{
+    margin-top:18px;
+    font-size:1.06rem;
+    line-height:1.85;
+    color:#d3ddeb;
+    max-width:760px;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:46px;padding:0 16px;border-radius:12px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.05);
+    font-size:14px;font-weight:600;
+  }
+  .btn:hover{background:rgba(255,255,255,.09)}
+  .btn-primary{background:#e6f6ff;color:#0f172a;border-color:transparent}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .snapshot-list{display:grid;gap:12px;margin-top:18px}
+  .snapshot-item{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--border)}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .metric{padding:22px}
+  .metric .value{font-size:1.9rem;font-weight:700}
+  .metric .label{margin-top:8px;color:var(--muted);font-size:14px}
+  .two-col{display:grid;grid-template-columns:1.02fr .98fr;gap:20px;align-items:stretch}
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .skill-card,.artifact-card,.insight-card,.timeline-item{height:100%}
+  .skill-card{
+    padding:18px;border-radius:16px;background:rgba(255,255,255,.03);
+    border:1px solid var(--border);
+  }
+  .skill-card h4{font-size:1rem;margin-bottom:8px}
+  .skill-card p{font-size:14px;color:#d5dfeb;line-height:1.75}
+  .timeline{display:grid;gap:16px;margin-top:18px}
+  .timeline-item{
+    padding:20px;border-radius:16px;background:rgba(255,255,255,.03);
+    border:1px solid var(--border);
+  }
+  .timeline-meta{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+  .timeline-role{font-size:1.06rem;font-weight:650}
+  .timeline-org{color:#d5ebff;font-weight:600}
+  .timeline-dates{color:var(--muted);font-size:14px}
+  .timeline-item ul,.summary-list{margin:10px 0 0 18px;padding:0;color:#d7e2ee}
+  .timeline-item li,.summary-list li{margin:8px 0}
+  .case-study{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:stretch}
+  .case-study-summary{display:grid;gap:16px}
+  .artifact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .artifact-card{
+    padding:20px;border-radius:18px;background:rgba(255,255,255,.03);
+    border:1px solid var(--border);
+    display:flex;flex-direction:column;justify-content:space-between;gap:12px;
+  }
+  .artifact-meta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .artifact-card p{font-size:14px;color:#d4dfeb}
+  .artifact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);
+    font-size:13px;color:#d7e3f0;
+  }
+  .table{width:100%;border-collapse:collapse;margin-top:16px}
+  .table th,.table td{
+    padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border);
+    font-size:14px;
+  }
+  .table th{
+    color:#dff3ff;font-size:12px;letter-spacing:.12em;text-transform:uppercase
+  }
+  .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .insight-card{
+    overflow:hidden;border-radius:18px;background:rgba(255,255,255,.03);
+    border:1px solid var(--border);
+  }
+  .insight-card img{width:100%;height:170px;object-fit:cover;display:block}
+  .insight-body{padding:20px}
+  .insight-body p{margin-top:8px;color:#d2deea;font-size:14px}
+  .footer-card{
+    display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap
+  }
+
+  .viewer-modal{
+    position:fixed;inset:0;background:rgba(2,6,23,.84);backdrop-filter:blur(10px);
+    display:none;place-items:center;z-index:60;padding:18px;
+  }
+  .viewer-modal.open{display:grid}
+  .viewer-shell{
+    width:min(1040px,100%);height:88vh;background:#0b1322;border-radius:22px;
+    overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+  }
+  .viewer-top{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    padding:14px 18px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.04)
+  }
+  .viewer-title{font-weight:650}
+  .viewer-actions button{
+    min-height:38px;padding:0 14px;border-radius:12px;border:1px solid var(--border);
+    background:rgba(255,255,255,.05);color:#fff;cursor:pointer
+  }
+  .viewer-frame{flex:1;width:100%;border:0;background:#fff}
+
+  @media (max-width: 980px){
+    .hero,.two-col,.case-study{grid-template-columns:1fr}
+    .metrics,.grid-2,.artifact-grid,.insight-grid,.skill-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width: 720px){
+    .container{width:min(var(--maxw),calc(100% - 24px))}
+    .metrics,.grid-2,.artifact-grid,.insight-grid,.skill-grid{grid-template-columns:1fr}
+    .topbar-inner{flex-direction:column;align-items:flex-start}
+    .nav{gap:12px}
+    .hero-actions{flex-direction:column;align-items:stretch}
+    .viewer-shell{height:92vh}
+    .table th:nth-child(3), .table td:nth-child(3){display:none}
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div>
+      <div class="brand">Portfolio</div>
+      <div class="muted" style="font-size:16px;">IT Audit | Governance, Risk and Compliance (GRC)</div>
+    </div>
+    <nav class="nav">
+      <a href="#profile">Profile</a>
+      <a href="#epic-case">Start Here</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" id="profile">
+    <div>
+      <div class="badge">Fola Awlui</div>
+      <div style="margin-top:18px; margin-bottom:8px;">
+        <img src="documents/Assets/myprofile.jpg" alt="Profile picture" style="width:112px;height:112px;border-radius:50%;border:3px solid rgba(255,255,255,.18);object-fit:cover;box-shadow:0 14px 34px rgba(0,0,0,.28);" />
+      </div>
+      <h1 style="font-size:60px;">IT Auditor, GRC Analyst</h1>
+      <h2 style="font-size:35px;">ITGC | ITAC | IAM | Cloud Controls Infrastructure | AI Risk</h2>
+      <p class="lead">
+        I perform IT audit work across SOX ITGC, IAM, and application controls, with hands-on testing in healthcare and enterprise environments. What matters most to me is whether the file set can hold up under review: clear scope, sensible testing, believable evidence, and findings that say exactly what happened.
+      </p>
+      <p class="lead">
+        This portfolio is set up for quick review. If you only look at one section, start with the Epic case. It is the best example of how I move from walkthroughs and testing to findings and reporting.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#epic-case">View Epic Case Study (Start Here)</a>
+        <a class="btn" href="#artifacts">See Audit Workpapers</a>
+        <a class="btn viewer-link" href="https://drive.google.com/file/d/16OmM3ndL0RIiiIWcevc0nQmMu7YlTzTK/view?usp=sharing" data-title="Resume Preview">Open Resume</a>
+      </div>
+    </div>
+
+    <div class="card p-24">
+      <div class="eyebrow">Professional Snapshot</div>
+      <h3 style="margin-top:12px;">Work grounded in control execution, not theory.</h3>
+      <div class="snapshot-list">
+        <div class="snapshot-item">6+ years across healthcare, enterprise risk, and control-focused audit work.</div>
+        <div class="snapshot-item">Hands-on testing in access, change, operations, IAM, HIPAA, report validation, and remediation follow-up.</div>
+        <div class="snapshot-item">Comfortable working with control owners, security teams, application support, infrastructure, and leadership.</div>
+        <div class="snapshot-item">Documentation style centered on traceability, practical language, and review-readiness.</div>
+      </div>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="skill-card">
+          <h4>Frameworks & Regulations</h4>
+          <p>SOX 404, HIPAA, HITRUST, NIST, COBIT, PCI-DSS, COSO, SOC 1 / SOC 2.</p>
+        </div>
+        <div class="skill-card">
+          <h4>Core Domains</h4>
+          <p>ITGC, IAM, cloud controls, third-party risk, remediation tracking, report validation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" style="padding-top:0;">
+    <div class="metrics">
+      <div class="card metric">
+        <div class="value">6+</div>
+        <div class="label">Years in IT Audit & Technology Risk</div>
+      </div>
+      <div class="card metric">
+        <div class="value">60+</div>
+        <div class="label">Healthcare facilities supported in current environment</div>
+      </div>
+      <div class="card metric">
+        <div class="value">35%</div>
+        <div class="label">Reduction in repeat findings through remediation discipline</div>
+      </div>
+      <div class="card metric">
+        <div class="value">15+</div>
+        <div class="label">Enterprise applications strengthened through access control work</div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:20px;">
+      <div class="card p-24">
+        <div class="eyebrow">Experience</div>
+        <h2 style="margin-top:12px;">Recent work in healthcare, enterprise risk, and control testing.</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <div>
+                <div class="timeline-role">Current Role</div>
+                <div class="timeline-org">IT Audit, Technology Risk, and Control Review</div>
+              </div>
+              <div class="timeline-dates">2020 – Present</div>
+            </div>
+            <ul>
+              <li>SOX ITGC testing across financial and clinical systems.</li>
+              <li>Walkthroughs and testing over logical access, change management, and IT operations.</li>
+              <li>IAM review work covering provisioning, de-provisioning, privileged access, and periodic review controls.</li>
+              <li>Support for HIPAA, HITRUST, cloud controls, and remediation follow-through.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <div>
+                <div class="timeline-role">Industries</div>
+                <div class="timeline-org">I am interested and can transfert my skills to any industry</div>
+              </div>
+            </div>
+            <p class="muted">Information Technology | Education | Transport & Logistics | Energy |Telecommunications | Manufacturing | Retail & E-Commerce</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-24">
+        <div class="eyebrow">Education & Credentials</div>
+        <h2 style="margin-top:12px;">Technical grounding with business context.</h2>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h4>Education</h4>
+            <p>Associate of Science in Computer Information Systems, Master’s Degree in Management, and Bachelor’s Degree in Finance and Management.</p>
+          </div>
+          <div class="skill-card">
+            <h4>Certifications & Training</h4>
+            <p>CompTIA Security+, IT Audit Fundamentals, and Oracle Database 12c Administrator Certified Professional.</p>
+          </div>
+          <div class="skill-card">
+            <h4>How I think about risk</h4>
+            <p>I usually start with what could break the process, then work backward to the control, the evidence, and the point where management would actually feel the impact.</p>
+          </div>
+          <div class="skill-card">
+            <h4>Working style</h4>
+            <p>Structured, steady, and practical. I prefer clear workpapers, plain language, and findings that say exactly what happened without sounding inflated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="epic-case">
+    <div class="card p-28">
+      <div class="eyebrow">Start Here</div>
+      <h2 style="margin-top:12px;">Epic EHR IT Application Controls Review</h2>
+      <p style="margin-top:16px; max-width:920px; color:#d4dfeb; font-size:16px; line-height:1.85;">
+        This case study is the clearest example of how I approach an audit from walkthrough through reporting. The review focused on whether key Epic workflows were supported by controls that were understandable, testable, and credible once evidence was pulled. The file set below is meant to feel like a live engagement, not a presentation-only project.
+      </p>
+
+      <div class="case-study" style="margin-top:20px;">
+        <div class="case-study-summary">
+          <div class="card-strong p-24">
+            <h3>Scope</h3>
+            <ul class="summary-list">
+              <li>Epic modules reviewed: Registration, MPI, Orders / Results, Billing, ETL, and reporting.</li>
+              <li>Control types covered: Input, Processing, and Output controls.</li>
+              <li>Objective: validate the accuracy, completeness, and reliability of critical workflows.</li>
+            </ul>
+          </div>
+          <div class="card-strong p-24">
+            <h3>What I did</h3>
+            <ul class="summary-list">
+              <li>Performed walkthroughs with control owners and support teams.</li>
+              <li>Tested selected samples across key controls using logs, approvals, and screenshots.</li>
+              <li>Documented exceptions and linked them to findings and reporting output.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-strong p-24">
+          <h3>What I found</h3>
+          <ul class="summary-list">
+            <li>One control exception tied to missing or incomplete approval evidence.</li>
+            <li>One smaller observation where timing or follow-up was inconsistent.</li>
+            <li>Remaining sampled controls operated as expected.</li>
+            <li>Key strength of the file set is the link between testing, exceptions, and reporting.</li>
+            <li>Documentation was intentionally kept plain and direct so a reviewer can follow the story without backtracking.</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="pill">12 in-scope controls</span>
+            <span class="pill">Input / Processing / Output</span>
+            <span class="pill">Epic EHR</span>
+            <span class="pill">Testing traceability</span>
+            <span class="pill">Issue linkage</span>
+            <span class="pill">Healthcare audit context</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-grid">
+        <div class="artifact-card">
+          <div>
+            <div class="artifact-meta">Core Audit File</div>
+            <h4>Audit report</h4>
+            <p>Executive-style report summarizing scope, methodology, observations, and final conclusions from the Epic review.</p>
+          </div>
+          <div class="artifact-actions">
+            <a class="btn viewer-link" href="https://drive.google.com/file/d/1KTHgd8ohDa7dCMthvwNlj5kP9l8yO_pr/view?usp=drive_link" data-title="Epic Audit Report Preview">Open in Viewer</a>
+          </div>
+        </div>
+
+        <div class="artifact-card">
+          <div>
+            <div class="artifact-meta">Core Audit File</div>
+            <h4>Findings log</h4>
+            <p>Issue register showing condition, cause, impact, recommendation, and ownership tied to the Epic review.</p>
+          </div>
+          <div class="artifact-actions">
+            <a class="btn" href="https://docs.google.com/spreadsheets/d/1zg7SB1ImYPGqqw7r0znSl-huIGU_3bR7/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open in Google Sheets</a>
+          </div>
+        </div>
+
+        <div class="artifact-card">
+          <div>
+            <div class="artifact-meta">Core Audit File</div>
+            <h4>Workpaper</h4>
+            <p>Epic walkthrough and testing workbook showing sample-based review, evidence handling, and notes captured during fieldwork.</p>
+          </div>
+          <div class="artifact-actions">
+            <a class="btn" href="https://docs.google.com/spreadsheets/d/1nEhXeXfHfVgHPkaBR7QeccpnlK6GBxoB/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open in Google Sheets</a>
+          </div>
+        </div>
+
+        <div class="artifact-card">
+          <div>
+            <div class="artifact-meta">Reference View</div>
+            <h4>Data flow diagram</h4>
+            <p>Practical view of how data moves from registration through processing, billing, ETL, and reporting.</p>
+          </div>
+          <div class="artifact-actions">
+            <a class="btn viewer-link" href="https://drive.google.com/file/d/1cjzURFpNqM6BgJi2wn69BgUgJMFYkL47/view?usp=drive_link" data-title="Epic Data Flow Diagram Preview">Open in Viewer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="artifacts">
+    <div class="card p-28">
+      <div class="eyebrow">Artifacts</div>
+      <h2 style="margin-top:12px;">Audit workpapers and reusable templates</h2>
+      <p style="margin-top:14px; max-width:920px; color:#d2deea;">
+        The files below are the supporting layer around the Epic case study. The point is not to show everything at once. It is to show enough of the file set for a reviewer to see how I organize testing, risk linkage, and follow-up.
+      </p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Artifact</th>
+            <th>What it shows</th>
+            <th>Format</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resume</td>
+            <td>Full work history, industry context, and technical background supporting the portfolio.</td>
+            <td>Embedded PDF</td>
+            <td><a class="btn viewer-link" href="https://drive.google.com/file/d/16OmM3ndL0RIiiIWcevc0nQmMu7YlTzTK/view?usp=sharing" data-title="Resume Preview">Open</a></td>
+          </tr>
+          <tr>
+            <td>Control Testing Lead Sheet</td>
+            <td>How testing was organized, tracked, and summarized across controls and supporting workpapers.</td>
+            <td>Spreadsheet</td>
+            <td><a class="btn" href="https://docs.google.com/spreadsheets/d/1pCLo_srGsfudrtr3k08_Fg4P3XfOr7nH/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open</a></td>
+          </tr>
+          <tr>
+            <td>Risk &amp; Control Matrix</td>
+            <td>How key risks were mapped to control activities, ownership, and testing approach.</td>
+            <td>Spreadsheet</td>
+            <td><a class="btn" href="https://docs.google.com/spreadsheets/d/1fWoVb44w4cwIixLyPeZ-ey_d9p3A2ZwI/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open</a></td>
+          </tr>
+          <tr>
+            <td>ITGC Testing Workpaper</td>
+            <td>Execution-level file showing procedures, evidence, outcomes, and conclusions for ITGC testing.</td>
+            <td>Spreadsheet</td>
+            <td><a class="btn" href="https://docs.google.com/spreadsheets/d/1xWjZsZ8Vl1PGzXEmTEEzUoUcCWxP6Rdf/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open</a></td>
+          </tr>
+          <tr>
+            <td>IAM Review Checklist</td>
+            <td>Reusable review support for joiners, movers, leavers, privileged access, and periodic certification controls.</td>
+            <td>Spreadsheet</td>
+            <td><a class="btn" href="https://docs.google.com/spreadsheets/d/1iPt17foC7qUuhbebwthv5Nw9Eppm7X1E/edit?usp=drive_link&ouid=101527047362461253307&rtpof=true&sd=true" target="_blank" rel="noreferrer">Open</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="insights">
+    <div class="two-col">
+      <div class="card p-24">
+        <div class="eyebrow">Method</div>
+        <h2 style="margin-top:12px;">How I usually approach audit work</h2>
+        <p style="margin-top:16px; color:#d3deea; line-height:1.85;">
+          I prefer to build the audit story so a reviewer can move from risk to control to testing to conclusion without guessing. That usually means keeping workpapers direct, avoiding inflated language, and making sure the evidence trail is easy to follow. If a control is strong, I say so plainly. If it is weak, I want the file to show why without hiding behind jargon.
+        </p>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h4>What I document early</h4>
+            <p>Scope, control owners, sample basis, evidence sources, and the places where a reviewer is most likely to challenge the file.</p>
+          </div>
+          <div class="skill-card">
+            <h4>What I avoid</h4>
+            <p>Overwritten narratives, weak exception linkage, and findings that sound polished but do not say clearly what happened.</p>
+          </div>
+          <div class="skill-card">
+            <h4>What strong workpapers do</h4>
+            <p>They let another auditor understand the testing path without jumping between tabs or filling in gaps themselves.</p>
+          </div>
+          <div class="skill-card">
+            <h4>What management usually cares about</h4>
+            <p>Whether the issue is real, whether it matters, and whether the remediation path is practical.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-strong p-24">
+        <div class="eyebrow">Insights &amp; Thought Leadership</div>
+        <div class="insight-grid" style="margin-top:18px;">
+          <div class="insight-card">
+            <img src="documents/Assets/audit-remediation-banner.png" alt="Repeat findings article banner" />
+            <div class="insight-body">
+              <h4>Why repeat audit findings happen and how stronger remediation stops them</h4>
+              <p>A practical view of why findings stay open too long and what better follow-through really looks like.</p>
+              <div class="artifact-actions"><a class="btn" href="documents/article_repeat_findings.html" target="_blank" rel="noreferrer">Read article</a></div>
+            </div>
+          </div>
+          <div class="insight-card">
+            <img src="documents/Assets/access-review-banner.png" alt="Access review article banner" />
+            <div class="insight-body">
+              <h4>What makes an access review defensible in audit</h4>
+              <p>A grounded take on why access reviews fail under scrutiny and what stronger review evidence looks like.</p>
+              <div class="artifact-actions"><a class="btn" href="documents/article_access_review.html" target="_blank" rel="noreferrer">Read article</a></div>
+            </div>
+          </div>
+          <div class="insight-card">
+            <img src="documents/Assets/change-management-banner.png" alt="Change management article banner" />
+            <div class="insight-body">
+              <h4>How to evaluate change management beyond ticket approval</h4>
+              <p>Looking past the workflow checkbox to the parts of change control that actually matter.</p>
+              <div class="artifact-actions"><a class="btn" href="documents/article_change_management.html" target="_blank" rel="noreferrer">Read article</a></div>
+            </div>
+          </div>
+          <div class="insight-card">
+            <img src="documents/Assets/cloud-controls-banner.png" alt="Cloud controls article banner" />
+            <div class="insight-body">
+              <h4>What IT auditors should look for in cloud control assessments</h4>
+              <p>A practical approach to cloud reviews that keeps the work focused on what can really go wrong.</p>
+              <div class="artifact-actions"><a class="btn" href="documents/article_cloud_controls.html" target="_blank" rel="noreferrer">Read article</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="card footer-card p-24">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2 style="margin-top:12px;">Open to IT Audit, Technology Risk, GRC, and control-focused roles.</h2>
+        <p style="margin-top:12px; max-width:760px; color:#d2deea;">
+          I am especially interested in teams that value clear documentation, practical control thinking, and reliable follow-through with stakeholders.
+        </p>
+      </div>
+      <div class="hero-actions" style="margin-top:0;">
+        <a class="btn btn-primary" href="mailto:awluifola@gmail.com">awluifola@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/fd.awlui" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="viewer-modal" id="viewerModal" aria-hidden="true">
+  <div class="viewer-shell">
+    <div class="viewer-top">
+      <div class="viewer-title" id="viewerTitle">Document preview</div>
+      <div class="viewer-actions">
+        <button id="viewerClose" type="button">Close</button>
+      </div>
+    </div>
+    <iframe class="viewer-frame" id="viewerFrame" title="Document preview"></iframe>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById('viewerModal');
+  const frame = document.getElementById('viewerFrame');
+  const title = document.getElementById('viewerTitle');
+  const closeBtn = document.getElementById('viewerClose');
+  const links = document.querySelectorAll('.viewer-link');
+
+  function openViewer(href, label) {
+    title.textContent = label || 'Document preview';
+    frame.src = href;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeViewer() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    frame.src = 'about:blank';
+    document.body.style.overflow = '';
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      openViewer(this.getAttribute('href'), this.dataset.title || this.textContent.trim());
+    });
+  });
+
+  closeBtn.addEventListener('click', closeViewer);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeViewer();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeViewer();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>How to Evaluate Change Management Beyond Ticket Approval</title>
+      <style>
+    :root{
+      --bg:#f8fafc;
+      --paper:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0f766e;
+      --accent-soft:#ecfeff;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%);
+      color:var(--text);
+      line-height:1.75;
+    }
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:40px 20px 72px;}
+    .hero,.toc,.section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:32px 30px;
+      box-shadow:0 12px 28px rgba(15,23,42,.05);
+      margin-top:11px;
+    }
+    .hero{margin-top:0; border-radius:28px; padding:36px 34px 30px;}
+    .kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    h1{margin:18px 0 0; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.02em;}
+    h2{margin:0 0 8px; font-size:1.4rem; line-height:1.2;}
+    .sub{margin-top:16px; font-size:1.08rem; color:var(--muted); max-width:760px;}
+    .meta{display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:18px; color:var(--muted); font-size:14px;}
+    .author{margin-top:14px; font-size:15px; color:#334155;}
+    .author strong{color:#0f172a;}
+    .hero-image{
+      width:100%;
+      margin-top:24px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      display:block;
+      box-shadow:0 8px 24px rgba(15,23,42,.08);
+      object-fit:cover;
+    }
+    .toc ul{margin:0; padding-left:20px;}
+    .toc li{margin:8px 0;}
+    .section p{margin:0 0 10px;}
+    .pullquote{
+      margin:16px 0 18px;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid var(--accent);
+      background:#f8fafc;
+      border-radius:0 14px 14px 0;
+      color:#134e4a;
+      font-weight:600;
+    }
+    .callout{
+      margin-top:14px;
+      padding:18px 20px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+    }
+    .callout strong{display:block; margin-bottom:8px;}
+    .footer-note{margin-top:20px; color:var(--muted); font-size:14px;}
+    @media (max-width:640px){
+      .hero,.toc,.section{padding:22px 20px;}
+      .wrap{padding:20px 12px 48px;}
+    }
+</style>
+    </head>
+    <body>
+      <div class="wrap">
+        <section class="hero">
+          <div class="kicker">Article</div>
+          <h1>How to Evaluate Change Management Beyond Ticket Approval</h1>
+          <p class="sub">A change ticket with an approval stamp can look reassuring, but it does not always prove the change was controlled well. This article looks at how auditors can assess change management with more depth and better judgment.</p>
+          <div class="author">By <strong>Fola A.</strong></div>
+          <div class="meta">
+            <div>Topic: Change Management</div>
+            <div>Audience: IT Audit / Technology Risk / Controls</div>
+            <div>Category: Operational Governance</div>
+          </div>
+          <img class="hero-image" src="Assets/change-management-banner.png" alt="Change Management article banner image" />
+        </section>
+
+        <section class="toc">
+          <h2>In this article</h2>
+          <ul>
+            <li>Why ticket approval alone is not enough</li>
+<li>The control questions that matter most</li>
+<li>How emergency changes complicate the picture</li>
+<li>What stronger evidence actually looks like</li>
+<li>Why segregation still matters in modern environments</li>
+<li>What a mature change process feels like in audit</li>
+          </ul>
+        </section>
+
+        <section class="section">
+      <h2>A ticket can be approved and still tell you very little</h2>
+      <p>In many environments, the first thing people point to during change testing is the ticket. That makes sense. It is visible, easy to retrieve, and usually packed with timestamps, names, and workflow steps.</p><p>The problem is that a ticket can create the appearance of control without proving that the underlying change process was actually strong. A documented approval tells you that someone touched the workflow. It does not automatically tell you that the change was well designed, properly tested, migrated in a controlled way, or reviewed by the right people.</p><p>That is why evaluating change management beyond ticket approval matters. A good audit review should tell you whether the organization is truly controlling change, not just recording it.</p>
+
+      <div class="pullquote">A ticket is part of the evidence. It is not the entire control story.</div>
+    </section><section class="section">
+      <h2>The real questions sit behind the workflow</h2>
+      <p>A stronger review usually starts by stepping back from the ticket and asking what the process is supposed to prevent. Most change controls exist to reduce the risk of unauthorized, untested, or poorly executed changes affecting production systems.</p><p>Once you frame the control that way, the review becomes more useful. Was the change requested clearly? Was the right person approving it? Was testing completed before implementation? Was the migration path controlled? Was there a fallback plan? Did the evidence show real execution, or just administrative movement through the system?</p><p>Those questions often reveal more than the approval field ever will.</p>
+
+
+    </section><section class="section">
+      <h2>Emergency changes deserve judgment, not just tolerance</h2>
+      <p>Emergency changes are where many environments show their real maturity. Nobody expects every urgent change to follow the exact rhythm of a standard release. But a mature process still leaves behind signs of discipline, even under pressure.</p><p>What matters is whether the organization can explain why the change was urgent, who approved it, when the approval happened, what testing was feasible, and how the decision was documented afterward.</p><p>A weak environment treats emergency change as an exception large enough to excuse missing controls. A stronger one treats it as a different path that still deserves accountability.</p>
+      <div class="callout"><strong>When reviewing emergency changes, useful evidence often includes:</strong>Documented business or operational urgency<br>
+        Appropriate after-the-fact review if pre-approval was not possible<br>
+        Visible testing evidence, even if abbreviated<br>
+        Confirmation that implementation and review were separated where possible<br>
+        Clear notes showing the organization understood the risk of the shortcut</div>
+
+    </section><section class="section">
+      <h2>Testing evidence matters more than people think</h2>
+      <p>Testing is one of the easiest areas to overstate and one of the most important areas to verify. A ticket may say “tested successfully,” but that phrase by itself often means very little.</p><p>Stronger evidence usually shows what was tested, who tested it, and whether the test was relevant to the actual risk introduced by the change. In some environments, test scripts or screenshots exist. In others, there may be release notes, validation records, or business confirmation. The form can vary. What matters is whether the evidence supports confidence.</p><p>The more significant the change, the less reasonable it is to rely on vague statements alone.</p>
+
+
+    </section><section class="section">
+      <h2>Segregation is still a live issue, even in fast-moving teams</h2>
+      <p>Modern delivery environments can make segregation feel complicated. Small teams move fast. DevOps models blur traditional handoffs. Automation changes who does what and when.</p><p>But none of that removes the need to think about whether the same person can request, approve, develop, migrate, and validate a change without meaningful challenge. The control may look different in a modern environment, but the risk has not disappeared.</p><p>A mature review looks for compensating strength where clean separation is difficult. That could mean better logging, stronger peer review, tighter production permissions, or more visible oversight after implementation.</p>
+
+      <div class="pullquote">Speed changes the process. It does not remove the need for control.</div>
+    </section><section class="section">
+      <h2>Good change management feels organized before you even test it</h2>
+      <p>One of the clearest signs of a mature environment is that the evidence feels coherent. The request makes sense. The approver fits. The testing is understandable. The implementation path is visible. The timeline does not feel manufactured after the fact.</p><p>That does not mean every ticket is perfect. It means the process leaves behind enough structure that an auditor can follow the change from request through implementation and conclude that the organization was exercising control rather than reconstructing one later.</p><p>That is the real aim of change management testing. Not just to count approvals, but to decide whether the organization can move change into production with discipline, clarity, and an acceptable level of risk.</p>
+
+
+    </section>
+
+        <section class="section">
+      <h2>Closing thought</h2>
+      <p>A mature change process does more than move requests through a workflow. It shows that the organization can introduce change with discipline, understand the risk of what is being moved, and leave behind evidence that supports confidence in the result.</p>
+      <p>That is why strong change management testing has to go beyond the ticket. The real question is whether the process can be trusted when the environment is under pressure, moving quickly, or dealing with changes that matter most.</p>
+      <p class="footer-note">Fola A.</p>
+    </section>
+      </div>
+    </body>
+    </html>

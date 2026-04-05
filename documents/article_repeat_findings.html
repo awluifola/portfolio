@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Repeat Audit Findings Happen — and How Strong Remediation Stops Them</title>
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --paper:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0f766e;
+      --accent-soft:#ecfeff;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%);
+      color:var(--text);
+      line-height:1.75;
+    }
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:40px 20px 72px;}
+    .hero,.toc,.section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:32px 30px;
+      box-shadow:0 12px 28px rgba(15,23,42,.05);
+      margin-top:11px;
+    }
+    .hero{margin-top:0; border-radius:28px; padding:36px 34px 30px;}
+    .kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    h1{margin:18px 0 0; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.02em;}
+    h2{margin:0 0 8px; font-size:1.4rem; line-height:1.2;}
+    .sub{margin-top:16px; font-size:1.08rem; color:var(--muted); max-width:760px;}
+    .meta{display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:18px; color:var(--muted); font-size:14px;}
+    .author{margin-top:14px; font-size:15px; color:#334155;}
+    .author strong{color:#0f172a;}
+    .hero-image{
+      width:100%;
+      margin-top:24px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      display:block;
+      box-shadow:0 8px 24px rgba(15,23,42,.08);
+      object-fit:cover;
+    }
+    .toc ul{margin:0; padding-left:20px;}
+    .toc li{margin:8px 0;}
+    .section p{margin:0 0 10px;}
+    .pullquote{
+      margin:16px 0 18px;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid var(--accent);
+      background:#f8fafc;
+      border-radius:0 14px 14px 0;
+      color:#134e4a;
+      font-weight:600;
+    }
+    .callout{
+      margin-top:14px;
+      padding:18px 20px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+    }
+    .callout strong{display:block; margin-bottom:8px;}
+    .footer-note{margin-top:20px; color:var(--muted); font-size:14px;}
+    @media (max-width:640px){
+      .hero,.toc,.section{padding:22px 20px;}
+      .wrap{padding:20px 12px 48px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="kicker">Article</div>
+      <h1>Why Repeat Audit Findings Happen — and How Strong Remediation Stops Them</h1>
+      <p class="sub">
+        A repeat finding usually means more than “this happened again.” It often means the original fix never fully reached the real problem. This article looks at why that happens, what weak remediation tends to look like in practice, and how stronger follow-through can genuinely improve the control environment.
+      </p>
+      <div class="author">By <strong>Fola A.</strong></div>
+      <div class="meta">
+        <div>Topic: Audit Remediation</div>
+        <div>Audience: IT Audit / Technology Risk / Controls</div>
+        <div>Category: Professional Insight</div>
+      </div>
+
+      <img class="hero-image" src="Assets/audit-remediation-banner.png" alt="Audit remediation banner image" />
+    </section>
+
+    <section class="toc">
+      <h2>In this article</h2>
+      <ul>
+        <li>Why repeat findings matter more than they first appear</li>
+        <li>The most common reasons issues come back</li>
+        <li>What weak remediation looks like in real life</li>
+        <li>What strong remediation does differently</li>
+        <li>Why validation matters as much as action</li>
+        <li>A practical closing perspective</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Repeat findings are rarely just an audit annoyance</h2>
+      <p>
+        When a finding comes back, people often react to it like it is a documentation problem, or worse, an embarrassing replay of something that should have been done already. But repeat findings usually tell a more important story than that.
+      </p>
+      <p>
+        In many cases, they show that the organization responded to the visible issue without fully dealing with the reason it happened. The box got checked. The overdue review was completed. The one access issue was corrected. The missing evidence was gathered after the fact. On paper, something changed. In practice, the control environment often stayed just fragile enough for the same problem to return.
+      </p>
+      <div class="pullquote">
+        A repeat finding usually means the first response solved the immediate symptom, not the underlying weakness.
+      </div>
+      <p>
+        That is why repeat findings matter. They are not just about the past. They say something about the strength of the organization’s response, the quality of ownership, and whether the environment is truly getting better.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Why the same issues come back</h2>
+      <p>
+        One of the most common reasons is weak root cause analysis. A team sees the issue, responds quickly, and fixes what is directly in front of them. That part can look productive. But if nobody stops to ask why the issue happened in the first place, the real weakness often stays in place.
+      </p>
+      <p>
+        A late access review is a simple example. If the response is only “complete the review,” that may solve the overdue item, but it does not explain whether the delay came from unclear ownership, poor escalation, unreliable reporting, or weak evidence expectations. The review may be finished, but the control is still vulnerable.
+      </p>
+      <p>
+        Another reason is remediation that is too narrow. Sometimes the response fixes one example of the problem without strengthening the process that allowed it to happen. An inappropriate access assignment gets removed, but the provisioning workflow stays weak. An emergency change gets documented after the fact, but the approval path remains inconsistent. One visible issue disappears while the environment that created it stays the same.
+      </p>
+      <p>
+        Accountability is another major factor. Remediation falls apart quickly when ownership is vague. If nobody clearly owns the action, the due date, the evidence, and the final validation, the issue can drift for months in a gray area where it looks “in progress” but is not actually resolved.
+      </p>
+      <p>
+        And then there is documentation. In a lot of environments, real work may have happened, but not in a way that proves the control improved. A process gets adjusted. A new review gets performed. A checklist gets introduced. But if the supporting evidence is inconsistent or incomplete, the issue can still come back because the remediation cannot be clearly demonstrated.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What weak remediation usually looks like</h2>
+      <p>
+        Weak remediation is not always lazy remediation. In fact, it is often the opposite. People may put in real effort, but the effort is focused on closing the issue fast instead of closing it well.
+      </p>
+      <div class="callout">
+        <strong>It often sounds like this:</strong>
+        “We corrected the exception.”<br>
+        “We reminded the team.”<br>
+        “We completed the missing review.”<br>
+        “We updated the tracker.”<br>
+        “We told everyone to be more careful.”
+      </div>
+      <p>
+        Those actions may help in the moment, but they do not necessarily make the control environment stronger. Strong remediation usually changes something structural. It makes ownership clearer. It improves the workflow. It standardizes expectations. It strengthens evidence. It reduces reliance on memory, urgency, or individual effort.
+      </p>
+      <p>
+        The real question is not whether something was done. The real question is whether the environment is now less likely to produce the same failure again.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What stronger remediation does differently</h2>
+      <p>
+        Strong remediation starts with honesty. It requires the organization to look past the visible issue and deal with the conditions that made it possible. That means asking harder questions. Was the control poorly designed? Was the process understood differently across teams? Was the owner overloaded? Was the evidence requirement never clearly defined? Was the control dependent on one person remembering to do the right thing at the right time?
+      </p>
+      <p>
+        Once that is clear, stronger remediation focuses on sustainability. The best fixes are not the ones that look good for one testing cycle. They are the ones that still work when the pressure of the audit is gone. That might mean clearer review templates, better routing, more disciplined evidence retention, stronger escalation paths, or a more reliable way to monitor completion.
+      </p>
+      <p>
+        Strong remediation also has visible ownership. Each issue should have a real owner, a realistic date, a clear definition of completion, and a shared understanding of what evidence will support closure. That may sound basic, but it is where many remediation efforts either become disciplined or start to unravel.
+      </p>
+      <div class="pullquote">
+        Good remediation does not aim to make the issue look closed. It aims to make the control stronger.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Validation matters just as much as action</h2>
+      <p>
+        This is the part that gets skipped more often than it should. An issue should not be considered resolved only because someone says the action was completed. It should be reviewed to confirm that the fix actually improves the control and reduces the underlying risk.
+      </p>
+      <p>
+        That distinction matters. A team can complete a corrective action and still leave the control weak. A tracker may show “done,” while the process still depends on inconsistent execution or incomplete evidence. Validation helps separate effort from effectiveness.
+      </p>
+      <p>
+        This is also where audit can add real value. A strong audit function does more than identify issues. It helps bring discipline to how issues are understood, tracked, challenged, and closed. That means asking whether the response is durable, whether the evidence is sufficient, and whether the business is actually in a better position than it was before.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>The goal is not closure. The goal is improvement.</h2>
+      <p>
+        In the strongest environments, remediation is not treated like an administrative step after the “real” audit work is over. It is part of the real work. It is where the control environment either gets stronger or stays vulnerable.
+      </p>
+      <p>
+        The teams that handle remediation well usually do a few things consistently. They define ownership clearly. They document their response in a way that others can rely on. They focus on root cause instead of symptoms. And they build the fix into the normal rhythm of the process rather than treating it like a one-time reaction.
+      </p>
+      <p>
+        That is what reduces repeat findings. Not urgency alone. Not good intentions. Not a quick correction. Real improvement comes from disciplined follow-through and changes that make the control more dependable the next time it is tested, used, or challenged.
+      </p>
+      <p>
+        That, in the end, is what strong remediation is supposed to do. Not just close an issue, but leave the environment better than it was before.
+      </p>
+      <p class="footer-note">
+        This article was written as original portfolio content for a professional IT Audit / Technology Risk website.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

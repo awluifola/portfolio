@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>What IT Auditors Should Look for in Cloud Control Assessments</title>
+      <style>
+    :root{
+      --bg:#f8fafc;
+      --paper:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0f766e;
+      --accent-soft:#ecfeff;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%);
+      color:var(--text);
+      line-height:1.75;
+    }
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:40px 20px 72px;}
+    .hero,.toc,.section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:32px 30px;
+      box-shadow:0 12px 28px rgba(15,23,42,.05);
+      margin-top:11px;
+    }
+    .hero{margin-top:0; border-radius:28px; padding:36px 34px 30px;}
+    .kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    h1{margin:18px 0 0; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.02em;}
+    h2{margin:0 0 8px; font-size:1.4rem; line-height:1.2;}
+    .sub{margin-top:16px; font-size:1.08rem; color:var(--muted); max-width:760px;}
+    .meta{display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:18px; color:var(--muted); font-size:14px;}
+    .author{margin-top:14px; font-size:15px; color:#334155;}
+    .author strong{color:#0f172a;}
+    .hero-image{
+      width:100%;
+      margin-top:24px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      display:block;
+      box-shadow:0 8px 24px rgba(15,23,42,.08);
+      object-fit:cover;
+    }
+    .toc ul{margin:0; padding-left:20px;}
+    .toc li{margin:8px 0;}
+    .section p{margin:0 0 10px;}
+    .pullquote{
+      margin:16px 0 18px;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid var(--accent);
+      background:#f8fafc;
+      border-radius:0 14px 14px 0;
+      color:#134e4a;
+      font-weight:600;
+    }
+    .callout{
+      margin-top:14px;
+      padding:18px 20px;
+      border-radius:16px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+    }
+    .callout strong{display:block; margin-bottom:8px;}
+    .footer-note{margin-top:20px; color:var(--muted); font-size:14px;}
+    @media (max-width:640px){
+      .hero,.toc,.section{padding:22px 20px;}
+      .wrap{padding:20px 12px 48px;}
+    }
+</style>
+    </head>
+    <body>
+      <div class="wrap">
+        <section class="hero">
+          <div class="kicker">Article</div>
+          <h1>What IT Auditors Should Look for in Cloud Control Assessments</h1>
+          <p class="sub">Cloud control reviews can quickly become overwhelming because the environments are broad, dynamic, and highly technical. This article focuses on what auditors should actually pay attention to if they want the assessment to be practical and useful.</p>
+          <div class="author">By <strong>Fola A.</strong></div>
+          <div class="meta">
+            <div>Topic: Cloud Control Assessments</div>
+            <div>Audience: IT Audit / Technology Risk / Controls</div>
+            <div>Category: Technology Risk</div>
+          </div>
+          <img class="hero-image" src="Assets/cloud-controls-banner.png" alt="Cloud Control Assessments article banner image" />
+        </section>
+
+        <section class="toc">
+          <h2>In this article</h2>
+          <ul>
+            <li>Why cloud reviews can lose focus so easily</li>
+<li>The importance of context before testing</li>
+<li>What strong cloud control evidence tends to look like</li>
+<li>Where cloud control assessments often go shallow</li>
+<li>How remediation should be evaluated in cloud environments</li>
+<li>What makes a cloud review feel mature</li>
+          </ul>
+        </section>
+
+        <section class="section">
+      <h2>Cloud assessments can become too broad too fast</h2>
+      <p>Cloud environments create a particular kind of challenge for audit. There is usually a large volume of configurations, a wide range of services, and no shortage of benchmark language telling you what should be reviewed.</p><p>The risk is that an assessment becomes a checklist exercise with plenty of coverage on paper but not much practical value. A cloud review can easily become crowded with settings, screenshots, and policy language without ever becoming clear about what really matters in the environment being assessed.</p><p>That is why context matters at the start. Before an auditor gets deep into control areas, it helps to understand what the environment supports, where the sensitive data sits, what services are in scope, and which risks the business actually depends on the cloud environment to manage well.</p>
+
+      <div class="pullquote">A useful cloud assessment starts with understanding the environment, not just the benchmark.</div>
+    </section><section class="section">
+      <h2>The best cloud reviews begin with a clear operating picture</h2>
+      <p>It is difficult to assess cloud controls well if the review begins only with generic expectations. The environment needs shape. Which accounts or subscriptions are in scope? How are access roles managed? What logging is enabled? How are configurations monitored? Which services are business-critical? Where does production sit compared with development or test?</p><p>Once that picture is clear, the assessment becomes more grounded. Instead of testing the cloud in the abstract, the auditor is testing whether this specific environment is governed in a way that matches its actual risk.</p><p>That shift matters because the same control area can carry very different weight depending on what the environment does.</p>
+
+
+    </section><section class="section">
+      <h2>Good cloud evidence usually feels layered, not isolated</h2>
+      <p>In mature cloud reviews, evidence rarely comes from one place alone. It tends to be layered. There may be configuration views, policy statements, role definitions, monitoring outputs, remediation records, or screenshots tied back to a broader governance process.</p><p>That is often a good sign. It shows the environment is not relying on a single snapshot to prove control. Instead, the organization can connect configuration, ownership, policy, and oversight in a way that makes the control more believable.</p><p>Whether the topic is privileged access, logging, backup, key management, or vulnerability remediation, the evidence should help answer not just what the setting is, but how the organization knows it is being managed consistently.</p>
+      <div class="callout"><strong>Useful cloud assessment evidence often includes:</strong>Configuration evidence tied to specific in-scope services<br>
+        Role and permission structures that show ownership and access boundaries<br>
+        Logging or monitoring outputs that demonstrate visibility<br>
+        Policy or standard language that connects to the technical setting<br>
+        Remediation records that show misconfigurations were not only found, but corrected</div>
+
+    </section><section class="section">
+      <h2>Where cloud assessments often lose depth</h2>
+      <p>One common issue is overreliance on screenshots without enough supporting context. Screenshots can help, but on their own they often prove only a moment in time. Without understanding how the setting is monitored, changed, or reviewed, they can leave too much unanswered.</p><p>Another weak spot is treating all control areas as equally important. In reality, some cloud risks matter more than others based on the environment. Identity design, privileged access, security monitoring, network exposure, encryption, and remediation governance often deserve more attention than cosmetic settings.</p><p>A review can also lose depth when it separates technical evidence from process evidence too sharply. A mature assessment should show how governance and technical control fit together rather than treating them like unrelated worlds.</p>
+
+
+    </section><section class="section">
+      <h2>Remediation in cloud environments should be visible and timely</h2>
+      <p>Cloud environments change fast, which means remediation should not feel vague or static. If a control weakness or misconfiguration is identified, the follow-through should show who owned it, how it was corrected, when it was corrected, and how the organization confirmed the environment was stronger afterward.</p><p>That is especially important in areas like vulnerability management, excessive permissions, exposed services, and logging gaps. The value of the control assessment increases when the environment can show that findings actually drive improvement, not just reporting.</p><p>Cloud remediation should be measurable. The faster pace of the environment makes that even more important, not less.</p>
+
+      <div class="pullquote">In cloud reviews, the strength of remediation often tells you as much as the strength of the original control.</div>
+    </section><section class="section">
+      <h2>A mature cloud review leaves you with confidence, not just screenshots</h2>
+      <p>At the end of a good cloud control assessment, the auditor should be able to say more than “we checked the settings.” The review should support a view of whether the environment is governed responsibly, whether key risks are being watched, and whether the organization can respond when issues appear.</p><p>That is what makes a cloud review useful. Not the volume of evidence, but the quality of the understanding it creates. When the assessment is scoped well, tied to real risk, and supported by credible evidence, it becomes far more than a technical exercise. It becomes a meaningful governance review.</p>
+
+
+    </section>
+
+        <section class="section">
+      <h2>Closing thought</h2>
+      <p>The most useful cloud assessments are the ones that stay anchored to real risk. They do not try to prove everything at once. They focus on the areas that matter most to the environment, connect technical evidence to governance, and show whether the organization can maintain control as the environment evolves.</p>
+      <p>When a cloud review is done well, it gives more than a technical snapshot. It gives leadership a clearer view of whether the environment is being managed with enough discipline, visibility, and follow-through to support the business that depends on it.</p>
+      <p class="footer-note">Fola A.</p>
+    </section>
+      </div>
+    </body>
+    </html>
